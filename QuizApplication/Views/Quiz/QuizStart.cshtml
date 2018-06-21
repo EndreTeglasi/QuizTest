@@ -1,0 +1,72 @@
+﻿@model IEnumerable<QuizApplication.Models.Quiz>
+
+@{
+    ViewBag.Title = "QuizStart";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-group userLabel col-xs-12 col-sm-12 col-md-12 col-lg-12">Válasszon a kvíz kategóriák közül</div>
+
+    <div class="row cardBoard col-xs-12 col-sm-12 col-md-12 col-lg-12">
+    @foreach (var item in Model)
+    {
+        <div class="column">
+            <a href="@Url.Action("NewQuizStart", "Quiz", new { id = item.Id })">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center quizCard">
+
+                    <p class="front card-text">
+                        @Html.Label("Kvíz kategória")
+                    </p>
+                    <p class="front card-text">
+                        <h1>
+                            @Html.DisplayFor(modelItem => item.Name)
+                        </h1>
+                    </p>
+
+                    <p class="back card-text">
+                        @Html.Label("Kitöltött?")
+                    </p>
+
+                    @if (item.FinishedQuizByUser.Count <= 0 || Session["UserId"]?.ToString() != item.FinishedQuizByUser.FirstOrDefault().UserId.ToString())
+                    {
+                        <p class="back card-text">
+                            @Html.Label("Nem")
+                        </p>
+                    }
+                    else if (Session["UserId"]?.ToString() == item.FinishedQuizByUser.FirstOrDefault().UserId.ToString())
+                    {
+                        <p class="back card-text">
+                            @Html.Label("Igen")
+                        </p>
+                    }
+
+                    @if (Session["UserTypeId"]?.ToString() == "1")
+                    {
+                        <p class="back card-text">
+                            @Html.Label("Archivált?")
+                        </p>
+
+                        if (item.Archived == true)
+                        {
+                            <p class="back card-text">
+                                @Html.Label("Igen")
+                            </p>
+                        }
+                        else
+                        {
+                            <p class="back card-text">
+                                @Html.Label("Nem")
+                            </p>
+                            @Html.ActionLink("Archiválás", "ArchiveView", new { id = item.Id })
+                        }
+                    }
+
+                </div>
+            </a>
+        </div>
+    }
+        </div>
+}

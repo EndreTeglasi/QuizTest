@@ -1,0 +1,38 @@
+﻿@model QuizApplication.Models.CompletedQuiz
+
+@{
+    ViewBag.Title = "FinishedQuizView";
+}
+<div class="form-group userLabel col-xs-12 col-sm-12 col-md-12 col-lg-12">Kvízteszt eredmény</div>
+<div class="userDetails col-xs-12 col-sm-12 col-md-12 col-lg-12">
+
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.Label("Felhasználó")
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.UserNickName)
+        </dd>
+        <dt>
+            @Html.Label("Pontszám")
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TotalScore)
+        </dd>
+        <dt>
+            @Html.Label("Dátum")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Date)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.QuizName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.QuizName)
+        </dd>
+    </dl><br />
+    <a class="tableurlbutton col-xs-12 col-sm-12 col-md-12 col-lg-12" href="@Url.Action("QuizStart")"><div class="tablebutton">Vissza</div></a>
+</div>
+

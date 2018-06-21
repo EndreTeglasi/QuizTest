@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="9e9dcf20fffa4efa9b747cb7ac162ae6" Name="Diagram1" ZoomLevel="80">
+        <EntityTypeShape EntityType="QuizDBModel.Answer" Width="1.5" PointX="8.25" PointY="5.25" />
+        <EntityTypeShape EntityType="QuizDBModel.Avatar" Width="1.5" PointX="0.75" PointY="9" />
+        <EntityTypeShape EntityType="QuizDBModel.FinishedQuizByUser" Width="1.5" PointX="3" PointY="4.875" />
+        <EntityTypeShape EntityType="QuizDBModel.Question" Width="1.5" PointX="6" PointY="4.875" />
+        <EntityTypeShape EntityType="QuizDBModel.QuestionType" Width="1.5" PointX="3.75" PointY="8.5" />
+        <EntityTypeShape EntityType="QuizDBModel.Quiz" Width="1.5" PointX="0.75" PointY="5.25" />
+        <EntityTypeShape EntityType="QuizDBModel.User" Width="1.5" PointX="3" PointY="0.875" />
+        <EntityTypeShape EntityType="QuizDBModel.UserType" Width="1.5" PointX="0.75" PointY="2.625" />
+        <AssociationConnector Association="QuizDBModel.FK_Answer_Question" />
+        <AssociationConnector Association="QuizDBModel.FK_User_Avatar1" />
+        <AssociationConnector Association="QuizDBModel.FK_FinishedQuizByUser_Question" />
+        <AssociationConnector Association="QuizDBModel.FK_FinishedQuizByUser_Quiz" />
+        <AssociationConnector Association="QuizDBModel.FK_FinishedQuizByUser_User" />
+        <AssociationConnector Association="QuizDBModel.FK_Question_QuestionType1" />
+        <AssociationConnector Association="QuizDBModel.FK_Question_Quiz" />
+        <AssociationConnector Association="QuizDBModel.FK_User_UserType1" />
+        <AssociationConnector Association="QuizDBModel.UserQuiz" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,76 @@
+﻿@model QuizApplication.Models.QuizTestViewModel
+
+
+@{
+                /**/
+
+                ViewBag.Title = "NewQuizStart";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-group userLabel col-xs-12 col-sm-12 col-md-12 col-lg-12">Kitöltő felhasználók listája</div>
+
+    for (int i = 0; i < Model.Question.Count; i++)
+    {
+        <div class="quizQuestion">
+            <div class="questionPlusPoint">
+                <div>@Html.DisplayFor(model => Model.Question[i].QuestionText)</div>
+                <div>@Html.DisplayFor(model => Model.Question[i].Point) pont</div>
+                @Html.HiddenFor(model => Model.Question[i].QuestionId)
+                @Html.HiddenFor(model => Model.Question[i].QuizId)
+                @Html.HiddenFor(model => Model.Question[i].QuestionType)
+                @Html.HiddenFor(model => Model.Question[i].UserId)
+                @Html.HiddenFor(model => Model.Question[i].Date)
+                @Html.HiddenFor(model => Model.Question[i].Point)
+            </div>
+
+            @for (int j = 0; j < Model.Question[i].AnswerList.Count; j++)
+            {
+                <div>
+                    @if (Model.Question[i].QuestionType == 1)
+                    {
+                        @Html.RadioButtonFor(m => Model.Question[i].SelectedAnswer, Model.Question[i].AnswerList[j].Id, new { id = Model.Question[i].AnswerList[j].Id });
+                    }
+                    else
+                    {
+                        @Html.CheckBoxFor(m => Model.Question[i].AnswerList[j].AnswerCheck, new { @checked = @Model.Question[i].AnswerList[j].AnswerCheck });
+                        @Html.HiddenFor(model => Model.Question[i].AnswerList[j].Id)
+                    }
+                    @Html.DisplayFor(model => Model.Question[i].AnswerList[j].Answer1)
+                </div>
+            }
+        </div>
+    }
+    <div class="form-group saveButtonDivOutside">
+        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 saveButtonDivLeft">
+            <ul class="ulLeft">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 saveButtonDivCenter">
+            <input type="submit" value="Küldés" id="Submit" class="uniqueButton btn btn-default" />
+        </div>
+        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 saveButtonDivRight">
+            <ul class="ulRight">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+    </div>
+}

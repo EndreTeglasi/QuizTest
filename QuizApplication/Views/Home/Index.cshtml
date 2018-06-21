@@ -1,0 +1,16 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    @if (Session["UserTypeId"]?.ToString() != "0")
+    {
+        <h1><span class="userLabel">Üdvözlet @Session["NickName"] a weboldalon!</span></h1>
+    }
+    else
+    {
+        <h1><span>Üdvözlet a weboldalon!</span></h1>
+        <h1><span>Bejelentkezés szükséges!</span></h1>
+    }
+</div>
+

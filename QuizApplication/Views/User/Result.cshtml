@@ -1,0 +1,86 @@
+﻿@model QuizApplication.Models.FinishedQuizByUserSearchListViewModel
+
+@{
+    ViewBag.Title = "Result";
+}
+
+@using (Html.BeginForm("Result", "User", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+    <dl class="dl-horizontal userLabel col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <dt>
+            @Html.DisplayName("Felhasználó azonosító")
+        </dt>
+        <dd>
+            @Html.DisplayFor(x => Model.UserIdForPassing)
+            @Html.HiddenFor(x => Model.UserIdForPassing)
+        </dd>
+        <hr />
+        <dt>
+            @Html.DisplayName("Felhasználó becenév")
+        </dt>
+        <dd>
+            @Html.DisplayFor(x => Model.FinishedQuizByUserSearchViewModel.FirstOrDefault().NickName)
+        </dd>
+    </dl>
+
+    <div class="userDetails col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        <div class="container">
+            <div class="row">
+                <div class="form-group">
+                    @Html.LabelFor(model => model.QuizCategoryList, htmlAttributes: new { @class = "control-label col-md-4" })
+                    <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 dropDownList">
+                        @Html.DropDownListFor(model => model.QuizCategoryList, new SelectList(Model.QuizCategoryList), "Válasszon kategóriát", new { @class = "form-control", onchange = "this.form.submit();" })
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <table class="table">
+            <tr class="tableHeadDiv">
+                <th>
+                    @Html.DisplayName("Kvíz azonosító")
+                </th>
+                <th>
+                    @Html.DisplayName("Kvíz kategória")
+                </th>
+                <th>
+                    @Html.DisplayName("Kérdések")
+                </th>
+                <th>
+                    @Html.DisplayName("Elért pontszám")
+                </th>
+                <th>
+                    @Html.DisplayName("Kitöltés dátuma")
+                </th>
+            </tr>
+
+            @foreach (var item in Model.FinishedQuizByUserSearchViewModel)
+            {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.QuizId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.QuizCategory)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.QuestionName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Score)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Date)
+                </td>
+            </tr>
+    }
+        </table><br />
+        <a class="tableurlbutton col-xs-12 col-sm-12 col-md-12 col-lg-12" href="@Url.Action("Index")"><div class="tablebutton">Vissza</div></a>
+    </div>
+}

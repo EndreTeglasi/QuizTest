@@ -1,0 +1,54 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2036
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuizApplication", "QuizApplication\QuizApplication.csproj", "{2607F0FF-CDD9-4116-8F8E-9B02F1C141F1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuizApplication.Tests", "QuizApplication.Tests\QuizApplication.Tests.csproj", "{0B2E0416-804B-42AC-B5F0-D5B3CFF71227}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "QuizDB", "QuizDB\QuizDB.sqlproj", "{EBD37703-0650-445B-94DE-9604A989D76B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2607F0FF-CDD9-4116-8F8E-9B02F1C141F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2607F0FF-CDD9-4116-8F8E-9B02F1C141F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2607F0FF-CDD9-4116-8F8E-9B02F1C141F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2607F0FF-CDD9-4116-8F8E-9B02F1C141F1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B2E0416-804B-42AC-B5F0-D5B3CFF71227}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B2E0416-804B-42AC-B5F0-D5B3CFF71227}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B2E0416-804B-42AC-B5F0-D5B3CFF71227}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B2E0416-804B-42AC-B5F0-D5B3CFF71227}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EBD37703-0650-445B-94DE-9604A989D76B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EBD37703-0650-445B-94DE-9604A989D76B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EBD37703-0650-445B-94DE-9604A989D76B}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{EBD37703-0650-445B-94DE-9604A989D76B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EBD37703-0650-445B-94DE-9604A989D76B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EBD37703-0650-445B-94DE-9604A989D76B}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C94CAD73-6642-4B8E-B13D-D812A011623F}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 4
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://tfs.n-ware.hu/tfs/reaktorlabs
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = QuizApplication.Tests\\QuizApplication.Tests.csproj
+		SccProjectName1 = QuizApplication.Tests
+		SccLocalPath1 = QuizApplication.Tests
+		SccProjectUniqueName2 = QuizApplication\\QuizApplication.csproj
+		SccProjectName2 = QuizApplication
+		SccLocalPath2 = QuizApplication
+		SccProjectUniqueName3 = QuizDB\\QuizDB.sqlproj
+		SccProjectName3 = QuizDB
+		SccLocalPath3 = QuizDB
+	EndGlobalSection
+EndGlobal

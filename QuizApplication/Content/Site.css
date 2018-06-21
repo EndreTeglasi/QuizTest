@@ -1,0 +1,651 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+.body-content {
+    position: relative;
+    top: 9%;
+    padding-left: 15px;
+    padding-right: 15px;
+    z-index: 10;
+    left: 2%;
+}
+
+.modal-open {
+    padding-right: 0 !important;
+}
+
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+/*---------------------------------------------------------------Registration form---------------------------------------------------------------*/
+
+.textBox {
+    position: relative;
+    border: 2px solid white;
+    border-radius: 20px 20px 20px 20px;
+}
+
+.userTextBox {
+    border: 2px solid white;
+    margin: 10px;
+    padding: 20px;
+    color: white;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1vw;
+    border-radius: 20px 20px 20px 20px;
+    background: rgba(10, 80, 200, 0.8);
+}
+
+.userLabel {
+    border: 2px solid white;
+    margin: 10px;
+    padding: 35px;
+    color: white;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2vw;
+    border-radius: 20px 20px 20px 20px;
+    background: rgba(10, 200, 80, 0.8);
+    text-align: center;
+}
+
+.saveButtonDivLeft {
+    text-align: left;
+}
+
+.saveButtonDivCenter {
+    text-align: center;
+}
+
+.saveButtonDivRight {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.saveButtonDivOutside {
+    position: relative;
+    width: 100%;
+}
+
+.registerAvatarDivOutside {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid white;
+    margin: 10px;
+    padding: 20px;
+    color: white;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1vw;
+    border-radius: 30px 30px 30px 30px;
+    background: rgba(10, 80, 200, 0.8);
+}
+
+.registerAvatarDivInside {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.saveButtonDivOutside:hover ul {
+    visibility: visible;
+}
+
+ul {
+    visibility: hidden;
+    position: relative;
+    transform: translate (-50%, -50%);
+    margin: 0;
+    padding: 0;
+}
+
+ul li {
+    list-style: none;
+    width: 4vh;
+    height: 4vh;
+    background-color: white;
+    border-radius: 50%;
+    animation: animate 2s ease-in-out infinite;
+}
+
+@keyframes animate {
+    0% 40% 100% {
+        transform: scale(0.2);
+    }
+
+    20% {
+        transform: scale(0.2);
+    }
+}
+
+.ulLeft li {
+    float: left;
+}
+
+.ulRight li {
+    float: left;
+}
+
+.ulRight li:nth-child(1) {
+    animation-delay: -1.6s;
+    box-shadow: 0 0 50px blue;
+}
+
+.ulRight li:nth-child(2) {
+    animation-delay: -1.4s;
+    box-shadow: 0 0 50px blue;
+}
+
+.ulRight li:nth-child(3) {
+    animation-delay: -1.2s;
+    box-shadow: 0 0 50px blue;
+}
+
+.ulRight li:nth-child(4) {
+    animation-delay: -1s;
+    box-shadow: 0 0 50px blue;
+}
+
+.ulRight li:nth-child(5) {
+    animation-delay: -0.8s;
+    box-shadow: 0 0 50px blue;
+}
+
+.ulRight li:nth-child(6) {
+    animation-delay: -0.6s;
+    box-shadow: 0 0 50px blue;
+}
+
+.ulRight li:nth-child(7) {
+    animation-delay: -0.4s;
+    box-shadow: 0 0 50px blue;
+}
+
+.ulRight li:nth-child(8) {
+    animation-delay: -0.2s;
+    box-shadow: 0 0 50px blue;
+}
+
+.ulLeft li:nth-child(1) {
+    animation-delay: -0.2s;
+    box-shadow: 0 0 50px blue;
+}
+
+.ulLeft li:nth-child(2) {
+    animation-delay: -0.4s;
+    box-shadow: 0 0 50px blue;
+}
+
+.ulLeft li:nth-child(3) {
+    animation-delay: -0.6s;
+    box-shadow: 0 0 50px blue;
+}
+
+.ulLeft li:nth-child(4) {
+    animation-delay: -0.8s;
+    box-shadow: 0 0 50px blue;
+}
+
+.ulLeft li:nth-child(5) {
+    animation-delay: -1s;
+    box-shadow: 0 0 50px blue;
+}
+
+.ulLeft li:nth-child(6) {
+    animation-delay: -1.2s;
+    box-shadow: 0 0 50px blue;
+}
+
+.ulLeft li:nth-child(7) {
+    animation-delay: -1.4s;
+    box-shadow: 0 0 50px blue;
+}
+
+.ulLeft li:nth-child(8) {
+    animation-delay: -1.6s;
+    box-shadow: 0 0 50px blue;
+}
+
+/*---------------------------------------------------------------UserList form---------------------------------------------------------------*/
+.userList {
+    border: 2px solid white;
+    margin: 10px;
+    padding: 20px;
+    color: white;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1vw;
+    border-radius: 30px 30px 30px 30px;
+    background: rgba(10, 80, 200, 0.8);
+    text-align: center;
+}
+
+.userList th {
+    text-align: center;
+}
+
+.imgUserList {
+    height:50px;
+    width:50px;
+}
+
+.tablebutton {
+    width: 100%;
+    border: 2px solid white;
+    margin: 0;
+    padding: 1%;
+    color: white;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1vw;
+    border-radius: 10px 10px 10px 10px;
+    background: rgba(200, 80, 10, 0.8);
+    position: relative;
+    font-size: 1vw;
+    z-index: 10;
+}
+
+.tablebutton:hover {
+    box-shadow: 0 0 30px lightblue;
+}
+
+.userList .table td {
+    vertical-align: middle;
+}
+
+/*---------------------------------------------------------------User Details form---------------------------------------------------------------*/
+
+.userDetails {
+    border: 2px solid white;
+    margin: 10px;
+    padding: 20px;
+    color: white;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1vw;
+    border-radius: 30px 30px 30px 30px;
+    background: rgba(10, 80, 200, 0.8);
+}
+
+.tableurlbutton {
+    text-align: center;
+}
+
+/*---------------------------------------------------------------User Details form---------------------------------------------------------------*/
+
+.userLabel dl dt {
+    font-size: 1vw !important;
+}
+
+.userLabel dl dd {
+    font-size: 1.5vw !important;
+}
+
+th {
+    text-align: center;
+    color: blue;
+    vertical-align: middle;
+}
+
+.tableHeadDiv {
+    background-color: aqua;
+}
+
+.dropDownList {
+    position: relative;
+    margin-bottom: 2%;
+}
+
+/*---------------------------------------------------------------Quiz form---------------------------------------------------------------*/
+
+.quizCard, .quizCard p {
+    text-decoration: none !important;
+    color: white;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2vw;
+}
+
+.quizCard, .quizCard div {
+    border-radius: 30px 30px 30px 30px;
+    background: rgba(10, 80, 200, 0.8);
+    border: 2px solid white;
+}
+
+.questionPlusPoint {
+    display: flex;
+    justify-content: space-between;
+}
+
+.quizQuestion {
+    position: relative;
+    border: 2px solid white;
+    margin-bottom: 1%;
+    padding: 30px;
+    left: 1%;
+    color: white;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2vw;
+    border-radius: 30px 30px 30px 30px;
+    background: rgba(10, 80, 200, 0.8);
+    
+}
+
+.quizUser {
+    border: 2px solid white;
+    margin: 10px;
+    padding: 20px;
+    color: white;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1vw;
+    border-radius: 30px 30px 30px 30px;
+    background: rgba(10, 80, 200, 0.8);
+}
+
+
+
+.uniqueButton {
+    border-radius: 30px 30px 30px 30px;
+    background: rgba(10, 80, 200, 0.8);
+    color: white;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1vw;
+
+}
+
+.uniqueButton:hover {
+    box-shadow: 0 0 30px lightblue;
+}
+
+
+
+.content {
+    position: fixed;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    color: #f1f1f1;
+    width: 100%;
+    padding: 20px;
+}
+
+.navbar {
+    background: transparent;
+}
+
+.menubutton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 5%;
+    width: 10%;
+    border: 2px solid white;
+    margin: 10px;
+    padding: 1%;
+    color: white;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 10px;
+    border-radius: 10px 10px 10px 10px;
+    background: rgba(10, 80, 200, 0.8);
+    position: absolute;
+    animation-duration: 2s;
+    animation-iteration-count: 1;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 1vw;
+    z-index: 10;
+}
+
+.menubutton:hover {
+    box-shadow: 0 0 30px lightblue;
+    height: 6%;
+    width: 12%;
+}
+    /*----------------------------------------------Enter buttons----------------------------------------*/
+    .menubuttonEnterOneIn {
+        animation-name: enterone;
+        left: 10px;
+        top: 100px;
+    }
+
+@keyframes enterone {
+    0% {
+        left: 10px;
+        top: -900px;
+        transform: rotate(-360deg);
+    }
+
+    25% {
+        left: 10px;
+        top: 100px;
+        transform: rotate(0deg);
+    }
+}
+
+.menubuttonEnterTwoIn {
+    animation-name: entertwo;
+    left: 10px;
+    top: 50px;
+}
+
+@keyframes entertwo {
+    10% {
+        left: 10px;
+        top: -850px;
+        transform: rotate(-360deg);
+    }
+
+    35% {
+        left: 10px;
+        top: 50px;
+        transform: rotate(0deg);
+    }
+}
+
+/*----------------------------------------------Admin buttons----------------------------------------*/
+
+.menubuttonAdminOneIn {
+    animation-name: adminone;
+    left: 1%;
+    top: 48%;
+}
+
+@keyframes adminone {
+    0% {
+        left: 1%;
+        top: -148%;
+        transform: rotate(-360deg);
+    }
+
+    25% {
+        left: 1%;
+        top: 48%;
+        transform: rotate(0deg);
+    }
+}
+
+.menubuttonAdminTwoIn {
+    animation-name: admintwo;
+    left: 1%;
+    top: 40%;
+}
+
+@keyframes admintwo {
+    10% {
+        left: 1%;
+        top: -156%;
+        transform: rotate(-360deg);
+    }
+
+    35% {
+        left: 1%;
+        top: 40%;
+        transform: rotate(0deg);
+    }
+}
+
+.menubuttonAdminThreeIn {
+    animation-name: adminthree;
+    left: 1%;
+    top: 32%;
+}
+
+@keyframes adminthree {
+    20% {
+        left: 1%;
+        top: -164%;
+        transform: rotate(-360deg);
+    }
+
+    45% {
+        left: 1%;
+        top: 32%;
+        transform: rotate(0deg);
+    }
+}
+
+.menubuttonAdminFourIn {
+    animation-name: adminfour;
+    left: 1%;
+    top: 24%;
+}
+
+@keyframes adminfour {
+    30% {
+        left: 1%;
+        top: -172%;
+        transform: rotate(-360deg);
+    }
+
+    55% {
+        left: 1%;
+        top: 24%;
+        transform: rotate(0deg);
+    }
+}
+
+.menubuttonAdminFiveIn {
+    animation-name: adminfive;
+    left: 1%;
+    top: 16%;
+}
+
+@keyframes adminfive {
+    40% {
+        left: 1%;
+        top: -180%;
+        transform: rotate(-360deg);
+    }
+
+    65% {
+        left: 1%;
+        top: 16%;
+        transform: rotate(0deg);
+    }
+}
+
+.menubuttonAdminSixIn {
+    animation-name: adminsix;
+    left: 1%;
+    top: 8%;
+}
+
+@keyframes adminsix {
+    50% {
+        left: 1%;
+        top: -188%;
+        transform: rotate(-360deg);
+    }
+
+    75% {
+        left: 1%;
+        top: 8%;
+        transform: rotate(0deg);
+    }
+}
+
+/*----------------------------------------------User buttons----------------------------------------*/
+
+.menubuttonUserOneIn {
+    animation-name: userone;
+    left: 10px;
+    top: 150px;
+}
+
+@keyframes userone {
+    0% {
+        left: 10px;
+        top: -950px;
+        transform: rotate(-360deg);
+    }
+
+    25% {
+        left: 10px;
+        top: 150px;
+        transform: rotate(0deg);
+    }
+}
+
+.menubuttonUserTwoIn {
+    animation-name: usertwo;
+    left: 10px;
+    top: 100px;
+}
+
+@keyframes usertwo {
+    10% {
+        left: 10px;
+        top: -900px;
+        transform: rotate(-360deg);
+    }
+
+    35% {
+        left: 10px;
+        top: 100px;
+        transform: rotate(0deg);
+    }
+}
+
+.menubuttonUserThreeIn {
+    animation-name: userthree;
+    left: 10px;
+    top: 50px;
+}
+
+@keyframes userthree {
+    20% {
+        left: 10px;
+        top: -850px;
+        transform: rotate(-360deg);
+    }
+
+    45% {
+        left: 10px;
+        top: 50px;
+        transform: rotate(0deg);
+    }
+}
+
+.jumbotron {
+    width: 98%;
+}
+
+.column {
+    float: left;
+    width: 33.33%;
+    padding: 10px;
+    height: 300px;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.cardBoard {
+    left: 2%;
+}

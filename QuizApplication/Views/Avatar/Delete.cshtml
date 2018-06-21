@@ -1,0 +1,63 @@
+﻿@model QuizApplication.Models.AvatarViewModel
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<div class="form-group userLabel col-xs-12 col-sm-12 col-md-12 col-lg-12">Törlés</div>
+<div class="form-horizontal userDetails col-xs-12 col-sm-12 col-md-12 col-lg-12">
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SourceString)
+        </dt>
+
+        <dd>
+            <img src="@Model.SourceString">
+        </dd>
+    </dl>
+    <a class="tableurlbutton col-xs-12 col-sm-12 col-md-12 col-lg-12" href="@Url.Action("Index")"><div class="tablebutton">Vissza</div></a>
+</div>
+    
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+<div class="form-actions saveButtonDivOutside">
+    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 saveButtonDivLeft">
+        <ul class="ulLeft">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 saveButtonDivCenter">
+        <input type="submit" value="Törlés" class="uniqueButton btn btn-default" />
+    </div>
+    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 saveButtonDivRight">
+        <ul class="ulRight">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+</div>
+}
+

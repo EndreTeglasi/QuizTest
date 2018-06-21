@@ -1,0 +1,87 @@
+﻿@model List<QuizApplication.Models.UserFinishedQuizViewModel>
+
+@{
+    /**/
+
+    ViewBag.Title = "FinishedQuizListByUserView";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="form-group userLabel col-xs-12 col-sm-12 col-md-12 col-lg-12">Kitöltő felhasználók listája</div>
+
+    <div class="userList col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <table class="table">
+            <tr class="tableHeadDiv">
+                <th>
+                    @Html.DisplayName("Felhasználó")
+                </th>
+                <th>
+                    @Html.DisplayName("Kitöltés dátuma")
+                </th>
+                <th>
+                    @Html.DisplayName("Elért pontszám")
+                </th>
+                <th>
+                    @Html.DisplayName("Válaszok megtekintése")
+                </th>
+            </tr>
+
+            @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NickName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TotalScore)<span> pont</span>
+            </td>
+            <td>
+                <a class="tableurlbutton" href="#" data-toggle="modal" data-target="#@item.Id"><div class="tablebutton">Válaszok</div></a>
+            </td>
+        </tr>
+
+
+        <!-- Modal -->
+        <div class="modal fade" id="@item.Id" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content userTextBox">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title userLabel">@Html.DisplayFor(modelItem => item.NickName)</h4>
+                    </div>
+                    <div class="modal-body">
+                        @for (int i = 0; i < item.QuestionName.Count; i++)
+                {
+                    <dl class="dl-horizontal">
+                        <dt>
+                            @Html.DisplayFor(modelItem => item.QuestionName[i])
+                        </dt>
+                        <dd>
+                            @Html.DisplayFor(modelItem => item.ScorePerQuestion[i])<span> pont</span>
+                        </dd>
+                    </dl>
+        }
+                    </div>
+                    <a class="tableurlbutton col-xs-12 col-sm-12 col-md-12 col-lg-12" href="#" data-dismiss="modal"><div class="tablebutton">Vissza</div></a>
+                </div>
+
+            </div>
+        </div>
+
+}
+
+
+
+        </table>
+        <a class="tableurlbutton col-xs-12 col-sm-12 col-md-12 col-lg-12" href="@Url.Action("QuizListView")"><div class="tablebutton">Vissza</div></a>
+    </div>
+    
+
+}

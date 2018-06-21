@@ -1,0 +1,78 @@
+﻿@model QuizApplication.Models.QuizListViewModel
+
+@{
+    ViewBag.Title = "QuizListView";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="form-group userLabel col-xs-12 col-sm-12 col-md-12 col-lg-12">Kvíz lista</div>
+    <div class="form-horizontal userList col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <table class="table">
+            <tr class="tableHeadDiv">
+                <th>
+                    @Html.DisplayName("Azonosító")
+                </th>
+                <th>
+                    @Html.DisplayName("Kvíz kategória")
+                </th>
+                <th>
+                    @Html.DisplayName("Archivált kvíz")
+                </th>
+                <th>
+                    @Html.DisplayName("Kitöltött tesztek felhasználók szerint")
+                </th>
+            </tr>
+
+            @for (int i = 0; i < Model.QuizList.Count; i++)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(model => Model.QuizList[i].Id)
+                        @Html.HiddenFor(model => Model.QuizList[i].Id)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => Model.QuizList[i].Name)
+                        @Html.HiddenFor(model => Model.QuizList[i].Name)
+                    </td>
+                    <td>
+                        @Html.CheckBoxFor(model => Model.QuizList[i].Archived, new { @checked = Model.QuizList[i].Archived })
+                    </td>
+                    <td>
+                        <a class="tableurlbutton" href="@Url.Action("FinishedQuizListByUserView", new { id = Model.QuizList[i].Id })"><div class="tablebutton">Kitöltő felhasználók listája</div></a>
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+    <div class="form-group saveButtonDivOutside">
+        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 saveButtonDivLeft">
+            <ul class="ulLeft">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 saveButtonDivCenter">
+            <input type="submit" value="Mentés" id="Submit" class="uniqueButton btn btn-default" />
+        </div>
+        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 saveButtonDivRight">
+            <ul class="ulRight">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+    </div>
+}

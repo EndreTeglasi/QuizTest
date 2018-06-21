@@ -1,0 +1,68 @@
+﻿@model IEnumerable<QuizApplication.Models.UserViewModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="form-group userLabel">Felhasználók</div>
+<div class="userList">
+
+    <table class="table">
+        <tr class="tableHeadDiv">
+            <th>
+                @Html.DisplayName("Azonosító")
+            </th>
+            <th>
+                @Html.DisplayName("Becenév")
+            </th>
+            <th>
+                @Html.DisplayName("Avatár")
+            </th>
+            <th>
+                @Html.DisplayName("Felhasználó")
+            </th>
+            <th>
+                @Html.DisplayName("Kitöltött kvízek")
+            </th>
+            <th>
+                @Html.DisplayName("Összes pontszám")
+            </th>
+            <th>
+                @Html.DisplayName("Adatlap")
+            </th>
+            <th>
+                @Html.DisplayName("Eredmények")
+            </th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NickName)
+                </td>
+                <td>
+                    <img src="data:image/jpeg;base64,@System.Convert.ToBase64String(item.AvatarImage)" class="imgUserList"/>
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UserType.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NumberOfFinishedQuiz)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TotalScore)
+                </td>
+                <td>
+                    <a class="tableurlbutton" href="@Url.Action("Details", new { id = item.Id })"><div class="tablebutton">Adatlap</div></a>
+                </td>
+                <td>
+                    <a class="tableurlbutton" href="@Url.Action("Result", new { id = item.Id })"><div class="tablebutton">Eredmények</div></a>
+                </td>
+            </tr>
+        }
+    </table>
+</div>

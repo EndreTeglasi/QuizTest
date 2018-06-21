@@ -1,0 +1,57 @@
+﻿@model QuizApplication.Models.UserViewModel
+
+@{
+    ViewBag.Title = "Details";
+}
+<div class="form-group userLabel col-xs-12 col-sm-12 col-md-12 col-lg-12">Felhasználók</div>    
+<div class="userDetails col-xs-12 col-sm-12 col-md-12 col-lg-12">
+
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayName("Becenév")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NickName)
+        </dd>
+        <dt>
+            @Html.DisplayName("E-mail cím")
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+        <dt>
+            @Html.DisplayName("Jelszó")
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PlainPassword)
+        </dd>
+        <dt>
+            @Html.DisplayName("Kitöltött kvízek száma")
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.NumberOfFinishedQuiz)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Összpontszám")
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TotalScore)
+        </dd>
+        <dt>
+            @Html.DisplayName("Felhasználó típus")
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.UserType.Name)
+        </dd>
+        <dt>
+            @Html.DisplayName("Avatár")
+        </dt>
+        <dd>
+            <img src="data:image/jpeg;base64,@System.Convert.ToBase64String(Model.AvatarImage)" />
+        </dd>
+    </dl><br />
+    <a class="tableurlbutton col-xs-12 col-sm-12 col-md-12 col-lg-12" href="@Url.Action("Index")"><div class="tablebutton">Vissza</div></a>
+</div>
+

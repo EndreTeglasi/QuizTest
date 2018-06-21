@@ -1,0 +1,70 @@
+﻿@model QuizApplication.Models.LoginUserViewModel
+
+@{
+    ViewBag.Title = "Login";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="container col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <div class=" row">
+            <section id="loginForm">
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="form-group userLabel">Bejelentkezés</div>
+                <div class="form-group userTextBox">
+                    @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        @Html.TextBoxFor(m => m.Email, new { @class = "form-control textBox" })
+                        @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group userTextBox">
+                    @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        @Html.PasswordFor(m => m.Password, new { @class = "form-control textBox" })
+                        @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                @*Log In button animation*@
+                <div class="form-group saveButtonDivOutside">
+                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 saveButtonDivLeft">
+                        <ul class="ulLeft">
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                        </ul>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 saveButtonDivCenter">
+                            <input type="submit" value="Belépés" class="uniqueButton btn btn-default" />
+                        </div>
+                    </div>
+                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 saveButtonDivRight">
+                        <ul class="ulRight">
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                        </ul>
+                    </div>
+                </div>
+
+            </section>
+        </div>
+    </div>
+}
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
